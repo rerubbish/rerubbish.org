@@ -1,8 +1,8 @@
 {
   "home": {
-    "name": "ByteKai",
-    "title": "Software Engineer & Curious Tinkerer",
-    "introduction": "I’m constantly learning and evolving. I love diving into new ideas and finding creative ways to solve problems.",
+    "name": "Rerubbish",
+    "title": "「没啥用开源」致力于开发一些对生产力毫无作用甚至是负作用的程序，是一个脱离于实际的，罗曼蒂克般的组织。",
+    "introduction": "[Nothing Useful Open Source] is committed to developing programs that have no impact on productivity or even a negative impact. It is an organization that is detached from reality and romantic in nature.",
     "sections": {
       "blog": {
         "title": "Writing",
@@ -11,20 +11,12 @@
       "projects": {
         "title": "Projects",
         "viewAllText": "View all projects"
-      },
-      "experience": {
-        "title": "Experience",
-        "viewAllText": "View full résumé"
       }
     },
     "socialLinks": [
       {
         "platform": "GitHub",
-        "url": "https://github.com/bytekai"
-      },
-      {
-        "platform": "Twitter",
-        "url": "https://x.com/byteekai"
+        "url": "https://github.com/rerubbish"
       }
     ]
   }
