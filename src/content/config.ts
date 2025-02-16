@@ -52,40 +52,8 @@ const site = defineCollection({
     })
 });
 
-const notes = defineCollection({
-    loader: glob({
-        pattern: "**/*.md",
-        base: "./src/content/notes"
-    }),
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        publishedAt: z.coerce.date(),
-        category: z.string(),
-        draft: z.boolean().optional().default(false),
-    })
-});
-
-const bookmarks = defineCollection({
-    loader: glob({
-        pattern: "**/*.md",
-        base: "./src/content/bookmarks"
-    }),
-    schema: z.object({
-        title: z.string(),
-        type: z.enum(["article", "book", "video"]),
-        author: z.string(),
-        url: z.string().url(),
-        publishedAt: z.coerce.date(),
-        createdAt: z.coerce.date(),
-        description: z.string().optional(),
-    })
-});
-
 export const collections = {
     blog,
     projects,
-    site,
-    notes,
-    bookmarks,
+    site
 }; 

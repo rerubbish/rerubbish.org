@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import BaseHero from "../../components/shared/BaseHero.astro";
+import type { CollectionEntry } from "astro:content";
+import Container from "../../components/ui/Container.astro";
+import ContentList from "../../components/shared/ContentList.astro";
+
+
+const projects = await getCollection("projects");
+const featuredProjects = projects.filter((project: CollectionEntry<"projects">) => project.data.featured).slice(0, 3);
+
+---
+
+<BaseLayout title="Project" description="">
+  <Container>
+    <BaseHero title="Project" description="" />
+    <ContentList>
+      {
+        featuredProjects.map((project) => (
+          <article>
+            <div class="title-row">
+              <a href={project.data.url} target="_blank" rel="noopener noreferrer">
+                {project.data.title}
+              </a>
+            </div>
+            <p class="muted-text">{project.data.description}</p>
+            {project.data.techs && (
+              <div class="tags">
+                {project.data.techs.map((tech) => (
+                  <span>{tech}</span>
+                ))}
+              </div>
+            )}
+          </article>
+        ))
+      }
+    </ContentList>
+  </Container>
+</BaseLayout>

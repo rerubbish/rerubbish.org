@@ -8,5 +8,9 @@ export const NAVIGATION: Navigation = [
     {
         name: "Blog",
         path: "/blog",
+    },
+    {
+        name: "Projects",
+        path: "/projects",
     }
 ]; 
