@@ -6,10 +6,10 @@ import type { CollectionEntry } from "astro:content";
 import Container from "../../components/ui/Container.astro";
 import ContentList from "../../components/shared/ContentList.astro";
 
-
 const projects = await getCollection("projects");
-const featuredProjects = projects.filter((project: CollectionEntry<"projects">) => project.data.featured).slice(0, 3);
-
+const featuredProjects = projects
+  .filter((project: CollectionEntry<"projects">) => project.data.featured)
+  .slice(0, 3);
 ---
 
 <BaseLayout title="Project" description="">
@@ -20,7 +20,11 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
         featuredProjects.map((project) => (
           <article>
             <div class="title-row">
-              <a href={project.data.url} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.data.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {project.data.title}
               </a>
             </div>
@@ -38,3 +42,14 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
     </ContentList>
   </Container>
 </BaseLayout>
+<style>
+  .tags {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .tags span {
+    font-size: var(--text-xs);
+    opacity: 0.5;
+  }
+</style>
